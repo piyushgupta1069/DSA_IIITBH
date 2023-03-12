@@ -1,0 +1,41 @@
+string printSequence(string S)
+{
+    //code here.
+    vector<char>v(26);
+    char t='2';
+    for(int i=0;i<26;)
+    {
+        if(t=='7'||t=='9'){
+            for(int j=i;j<i+4;j++){
+                v[j]=t;
+            }
+            t++;
+            i+=4;
+        }else{
+            for(int j=i;j<i+3;j++){
+                v[j]=t;
+            }
+            t++;
+            i+=3;
+        }
+        
+    }
+    
+    string res;
+    for(int i=0;i<S.size();i++)
+    {
+        if(S[i]==' '){
+            res.push_back('0');
+            continue;
+        }
+        int cnt=0;
+        int ind=S[i]-'A';
+        char temp = v[ind];
+        while(ind>=0&&v[ind]==temp){
+            cnt++;
+            ind--;
+        }
+        for(int j=0;j<cnt;j++)res.push_back(temp);
+    }
+    return res;
+}

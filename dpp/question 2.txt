@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define MOD 1000000007
+const int N = 1e6+7;
+
+int main()
+{
+    string s; cin>>s;
+    int i=0,j=s.size()-1;
+    while(i<j){
+        if(s[i]!=s[j]){
+            cout<<"NO";
+            return 0;
+        }
+    }
+    cout<<"YES";
+
+    
+
+
+
+    return 0;
+}
